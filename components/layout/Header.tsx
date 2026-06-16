@@ -48,23 +48,23 @@ export default function Header() {
       {/* Pill bar */}
       <div
         className={cx(
-          "w-full max-w-[1200px] mx-auto flex items-center justify-between gap-4",
-          "px-3 pl-3 rounded-full border transition-all duration-300",
+          "w-full max-w-[1200px] mx-auto flex items-center justify-between gap-3",
+          "px-3 rounded-full border transition-all duration-300",
           scrolled
             ? "h-[62px] bg-white/96 border-[#E7DDEC] shadow-[0_10px_36px_rgba(75,11,107,0.08)]"
             : "h-[68px] bg-white/82 border-white/60 shadow-[0_12px_40px_rgba(75,11,107,0.05)]",
           "backdrop-blur-2xl"
         )}
       >
-        {/* Logo */}
+        {/* Logo — nunca comprime */}
         <a
           href="#inicio"
           aria-label="Espaço Vida Reabilitação — ir para o início"
           onClick={() => setMenuOpen(false)}
-          className="inline-flex items-center gap-3 shrink-0"
+          className="inline-flex items-center gap-2.5 shrink-0"
         >
           <div
-            className="w-[50px] h-[50px] rounded-full grid place-items-center overflow-hidden shrink-0"
+            className="w-[46px] h-[46px] rounded-full grid place-items-center overflow-hidden shrink-0"
             style={{
               background: "rgba(255,255,255,0.9)",
               border: "1px solid #E7DDEC",
@@ -74,21 +74,21 @@ export default function Header() {
             <Image
               src="/assets/espaco-vida/espaco-vida-logo-transparent.png"
               alt="Logo Espaço Vida"
-              width={44}
-              height={44}
+              width={40}
+              height={40}
               className="object-contain"
               priority
             />
           </div>
           <span className="hidden sm:flex flex-col">
             <strong
-              className="text-[1.05rem] leading-none font-black tracking-tight"
+              className="text-[1rem] leading-none font-black tracking-tight"
               style={{ color: "var(--purple)" }}
             >
               Espaço Vida
             </strong>
             <small
-              className="text-[0.63rem] font-black tracking-[0.18em] uppercase mt-1"
+              className="text-[0.6rem] font-black tracking-[0.18em] uppercase mt-1"
               style={{ color: "var(--muted)" }}
             >
               Reabilitação
@@ -96,16 +96,16 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — visível apenas em xl (≥1280px) para garantir que cabe */}
         <nav
-          className="hidden lg:flex items-center justify-center gap-0.5"
+          className="hidden xl:flex items-center justify-center flex-1 min-w-0 gap-0.5"
           aria-label="Menu principal"
         >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="px-2.5 py-2 rounded-full text-[0.74rem] font-[800] transition-all duration-200"
+              className="px-2.5 py-2 rounded-full text-[0.72rem] font-[800] whitespace-nowrap transition-all duration-200"
               style={{ color: "var(--muted)" }}
               onMouseEnter={(e) => {
                 (e.target as HTMLAnchorElement).style.color = "var(--purple)";
@@ -121,12 +121,12 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Header actions */}
+        {/* Ações — nunca comprimem */}
         <div className="flex items-center gap-2 shrink-0">
-          {/* Trabalhe conosco — fundo branco, borda roxa suave, texto roxo */}
+          {/* Trabalhe conosco — apenas em xl para não vazar */}
           <a
             href="#trabalhe"
-            className="hidden md:inline-flex items-center justify-center h-[46px] px-5 rounded-full text-[0.82rem] font-[900] transition-all duration-200 border hover:-translate-y-px"
+            className="hidden xl:inline-flex items-center justify-center h-[40px] px-4 rounded-full text-[0.76rem] font-[900] whitespace-nowrap transition-all duration-200 border hover:-translate-y-px"
             style={{
               color: "var(--purple)",
               background: "#FFFFFF",
@@ -136,45 +136,46 @@ export default function Header() {
             Trabalhe conosco
           </a>
 
-          {/* WhatsApp — roxo sólido, texto branco */}
+          {/* WhatsApp — sempre visível */}
           <a
             href={whatsappHref}
             {...(isWhatsappConfigured
               ? { target: "_blank", rel: "noreferrer" }
               : { onClick: (e) => e.preventDefault() })}
             aria-label="Falar no WhatsApp"
-            className="inline-flex items-center justify-center gap-2 h-[46px] px-5 rounded-full text-[0.82rem] font-[900] text-white transition-all duration-200 hover:-translate-y-px"
+            className="inline-flex items-center justify-center gap-2 h-[40px] px-4 rounded-full text-[0.78rem] font-[900] text-white whitespace-nowrap transition-all duration-200 hover:-translate-y-px"
             style={{
               background: "var(--purple)",
-              boxShadow: "0 14px 36px rgba(75, 11, 107, 0.28)",
+              boxShadow: "0 10px 28px rgba(75, 11, 107, 0.24)",
               opacity: isWhatsappConfigured ? 1 : 0.55,
             }}
           >
-            <FaWhatsapp size={16} />
+            <FaWhatsapp size={15} />
             <span className="hidden sm:inline">WhatsApp</span>
           </a>
 
+          {/* Burger — visível até xl */}
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
-            className="lg:hidden w-[46px] h-[46px] grid place-items-center rounded-full border transition-colors duration-200"
+            className="xl:hidden w-[40px] h-[40px] grid place-items-center rounded-full border transition-colors duration-200"
             style={{
               borderColor: "#E7DDEC",
               background: "#FFFFFF",
               color: "var(--purple)",
             }}
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile nav panel */}
+      {/* Mobile/tablet nav panel */}
       {menuOpen && (
         <nav
-          className="lg:hidden w-full max-w-[520px] mx-auto mt-2 p-3 rounded-[24px] border grid gap-1"
+          className="xl:hidden w-full max-w-[520px] mx-auto mt-2 p-3 rounded-[24px] border grid gap-1"
           style={{
             border: "1px solid #E7DDEC",
             background: "rgba(255,255,255,0.97)",
