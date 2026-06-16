@@ -11,9 +11,9 @@ const iconMap: Record<IconKey, LucideIcon> = {
 
 export default function Specialties() {
   return (
-    <section className="py-[112px]" id="especialidades">
+    <section className="py-24" id="especialidades">
       <div className="container">
-        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
             <span className="eyebrow">Especialidades</span>
             <h2 className="m-0" style={{ color: "var(--plum)" }}>

@@ -13,13 +13,16 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-[112px]" id="faq">
+    <section className="py-20" id="faq">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
           {/* Sidebar */}
           <Reveal className="lg:w-[320px] shrink-0">
             <span className="eyebrow">Dúvidas frequentes</span>
-            <h2 className="m-0" style={{ color: "var(--plum)" }}>
+            <h2
+              className="m-0"
+              style={{ color: "var(--plum)", fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}
+            >
               Respostas simples para decisões mais seguras.
             </h2>
             <p className="mt-4 text-base leading-[1.65]" style={{ color: "var(--muted)" }}>

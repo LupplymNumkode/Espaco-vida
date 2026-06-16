@@ -37,7 +37,7 @@ export default function CareGuide() {
 
   return (
     <section
-      className="py-[112px]"
+      className="py-20"
       id="guia-interativo"
       style={{ background: "var(--lilac)" }}
     >

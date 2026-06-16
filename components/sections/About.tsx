@@ -22,7 +22,7 @@ const values = [
 
 export default function About() {
   return (
-    <section className="py-[112px]" id="sobre">
+    <section className="py-24" id="sobre">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-[clamp(36px,6vw,80px)] items-center">
         {/* Foto */}
         <Reveal className="relative">

@@ -12,7 +12,7 @@ const infoIconStyle = {
 
 export default function Location() {
   return (
-    <section className="py-[112px]" id="localizacao">
+    <section className="py-20" id="localizacao">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           {/* Info column */}

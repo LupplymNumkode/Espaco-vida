@@ -6,7 +6,7 @@ import WhatsappLink from "@/components/ui/WhatsappLink";
 export default function FinalCTA() {
   return (
     <section
-      className="py-[100px]"
+      className="py-20"
       style={{
         background: "linear-gradient(135deg, #2D083F 0%, #4B0B6B 55%, #5E1680 100%)",
       }}
@@ -14,7 +14,7 @@ export default function FinalCTA() {
       <div className="container">
         {/* Card central — glass effect, compacto */}
         <div
-          className="max-w-[620px] mx-auto text-center flex flex-col items-center gap-5 py-10 px-8 sm:px-12 rounded-[28px]"
+          className="max-w-[580px] mx-auto text-center flex flex-col items-center gap-4 py-8 px-7 sm:px-10 rounded-[28px]"
           style={{
             background: "rgba(255,255,255,0.07)",
             border: "1px solid rgba(255,255,255,0.14)",

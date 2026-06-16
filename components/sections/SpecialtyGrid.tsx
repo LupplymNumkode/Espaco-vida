@@ -74,16 +74,19 @@ export default function SpecialtyGrid() {
   const detail = activeTitle ? specialtyDetails[activeTitle] : null;
 
   return (
-    <section className="py-[112px]" id="guia">
+    <section className="py-20" id="guia">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-[600px] mx-auto mb-14">
+        <div className="text-center max-w-[520px] mx-auto mb-10">
           <span className="eyebrow">Mapa de especialidades</span>
-          <h2 className="m-0" style={{ color: "var(--plum)" }}>
+          <h2
+            className="m-0"
+            style={{ color: "var(--plum)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)" }}
+          >
             Encontre a especialidade certa para você.
           </h2>
-          <p className="mt-4 text-base leading-[1.65]" style={{ color: "var(--muted)" }}>
-            Clique em qualquer área para entender quando procurar e como funciona o atendimento.
+          <p className="mt-3 text-sm leading-[1.65]" style={{ color: "var(--muted)" }}>
+            Clique em qualquer área para ver quando procurar e como funciona o atendimento.
           </p>
         </div>
 

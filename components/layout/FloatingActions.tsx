@@ -5,7 +5,7 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { buildWhatsappUrl, isWhatsappConfigured, whatsappMessages } from "@/lib/whatsapp";
 import { siteConfig } from "@/lib/seo";
 
-const BTN_SIZE = 52;
+const BTN_SIZE = 46;
 const BTN_SHADOW = "0 8px 24px rgba(75, 11, 107, 0.14)";
 
 export default function FloatingActions() {
@@ -13,7 +13,7 @@ export default function FloatingActions() {
 
   return (
     <div
-      className="fixed bottom-8 right-6 z-40 flex flex-col gap-3"
+      className="fixed bottom-6 right-5 z-40 flex flex-col gap-2.5"
       aria-label="Ações rápidas"
     >
       {/* WhatsApp */}

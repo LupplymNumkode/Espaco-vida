@@ -47,7 +47,7 @@ export default function Audience() {
   return (
     <section
       id="para-quem"
-      className="relative py-[128px] overflow-hidden"
+      className="relative py-24 overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #2D083F 0%, #4B0B6B 55%, #5E1680 100%)",
       }}

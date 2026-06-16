@@ -48,7 +48,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
 }
 
 body {
@@ -86,9 +90,9 @@ video {
 /* ──────────────────────────────────────────────
    Tipografia — escala controlada
 ────────────────────────────────────────────── */
-h1 { font-size: clamp(3.2rem, 6.5vw, 6.5rem); line-height: 0.92; }
-h2 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.0; }
-h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.2; }
+h1 { font-size: clamp(2.6rem, 4.8vw, 5rem); line-height: 0.95; }
+h2 { font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.05; }
+h3 { font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.25; }
 
 /* ──────────────────────────────────────────────
    Reveal animation

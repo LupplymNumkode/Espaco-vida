@@ -13,14 +13,14 @@ export default function Footer() {
 
   return (
     <footer
-      className="pt-16 pb-8"
+      className="pt-12 pb-7"
       style={{
         background: "#F4EFF8",
         borderTop: "1px solid #E7DDEC",
       }}
     >
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <a

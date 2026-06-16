@@ -51,8 +51,8 @@ export default function Header() {
           "w-full max-w-[1200px] mx-auto flex items-center justify-between gap-4",
           "px-3 pl-3 rounded-full border transition-all duration-300",
           scrolled
-            ? "h-[72px] bg-white/95 border-[#E7DDEC] shadow-[0_16px_50px_rgba(75,11,107,0.10)]"
-            : "h-[78px] bg-white/80 border-white/70 shadow-[0_18px_56px_rgba(75,11,107,0.07)]",
+            ? "h-[62px] bg-white/96 border-[#E7DDEC] shadow-[0_10px_36px_rgba(75,11,107,0.08)]"
+            : "h-[68px] bg-white/82 border-white/60 shadow-[0_12px_40px_rgba(75,11,107,0.05)]",
           "backdrop-blur-2xl"
         )}
       >
@@ -64,18 +64,18 @@ export default function Header() {
           className="inline-flex items-center gap-3 shrink-0"
         >
           <div
-            className="w-[60px] h-[60px] rounded-full grid place-items-center overflow-hidden shrink-0"
+            className="w-[50px] h-[50px] rounded-full grid place-items-center overflow-hidden shrink-0"
             style={{
               background: "rgba(255,255,255,0.9)",
               border: "1px solid #E7DDEC",
-              boxShadow: "0 8px 24px rgba(75,11,107,0.08)",
+              boxShadow: "0 4px 14px rgba(75,11,107,0.06)",
             }}
           >
             <Image
               src="/assets/espaco-vida/espaco-vida-logo-transparent.png"
               alt="Logo Espaço Vida"
-              width={54}
-              height={54}
+              width={44}
+              height={44}
               className="object-contain"
               priority
             />
@@ -105,7 +105,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="px-3 py-2.5 rounded-full text-[0.78rem] font-[800] transition-all duration-200"
+              className="px-2.5 py-2 rounded-full text-[0.74rem] font-[800] transition-all duration-200"
               style={{ color: "var(--muted)" }}
               onMouseEnter={(e) => {
                 (e.target as HTMLAnchorElement).style.color = "var(--purple)";

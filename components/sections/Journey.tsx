@@ -16,10 +16,10 @@ const isHighlighted = (index: number) => index === 0 || index === journeySteps.l
 
 export default function Journey() {
   return (
-    <section className="py-[112px]" id="como-funciona">
+    <section className="py-20" id="como-funciona">
       <div className="container">
         {/* Header */}
-        <Reveal className="text-center max-w-[560px] mx-auto mb-16">
+        <Reveal className="text-center max-w-[560px] mx-auto mb-12">
           <span className="eyebrow">Como funciona</span>
           <h2 className="m-0" style={{ color: "var(--plum)" }}>
             Uma jornada simples para começar com segurança.
@@ -35,7 +35,7 @@ export default function Journey() {
           {/* Linha horizontal — desktop only */}
           <div
             aria-hidden
-            className="hidden lg:block absolute top-[36px] h-px"
+            className="hidden lg:block absolute top-[30px] h-px"
             style={{
               left: "calc(12.5% + 20px)",
               right: "calc(12.5% + 20px)",
@@ -57,9 +57,9 @@ export default function Journey() {
                   className="flex flex-row lg:flex-col items-start lg:items-center gap-4 lg:gap-0 lg:text-center pb-8 lg:pb-0"
                 >
                   {/* Círculo da etapa */}
-                  <div className="relative flex flex-col items-center lg:mb-6 shrink-0">
+                  <div className="relative flex flex-col items-center lg:mb-5 shrink-0">
                     <div
-                      className="relative w-[72px] h-[72px] rounded-full grid place-items-center border-4 border-white"
+                      className="relative w-[60px] h-[60px] rounded-full grid place-items-center border-4 border-white"
                       style={{
                         background: highlight
                           ? "var(--purple)"
@@ -70,7 +70,7 @@ export default function Journey() {
                         color: highlight ? "#fff" : "var(--purple)",
                       }}
                     >
-                      <Icon size={26} />
+                      <Icon size={22} />
                       {/* Badge numerado em turquesa */}
                       <span
                         className="absolute -top-1 -right-1 w-6 h-6 rounded-full text-xs font-[900] grid place-items-center"

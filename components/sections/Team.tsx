@@ -1,36 +1,50 @@
-import { CircularTestimonials } from "@/components/ui/circular-testimonials";
+import {
+  Brain,
+  HeartHandshake,
+  Mic,
+  Stethoscope,
+  Baby,
+  ClipboardList,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Reveal from "@/components/utils/Reveal";
 
-// TODO: substituir src pelas fotos reais da equipe quando a clínica enviar.
-// TODO: substituir name e designation pelos dados reais (nome, especialidade/registro).
-const teamMembers = [
+const areas: { Icon: LucideIcon; area: string; description: string }[] = [
   {
-    quote:
-      "Atuação voltada para fala, linguagem, comunicação, deglutição e desenvolvimento infantil, com acolhimento para crianças e famílias.",
-    name: "Profissional de Fonoaudiologia",
-    designation: "Fonoaudiologia",
-    src: "/images/team/fonoaudiologia.svg",
+    Icon: Mic,
+    area: "Fonoaudiologia",
+    description:
+      "Atuação em fala, linguagem, comunicação, deglutição e desenvolvimento infantil, com escuta atenta para crianças e famílias.",
   },
   {
-    quote:
+    Icon: Brain,
+    area: "Psicologia",
+    description:
       "Acolhimento emocional, orientação familiar e acompanhamento terapêutico para diferentes fases da vida.",
-    name: "Profissional de Psicologia",
-    designation: "Psicologia",
-    src: "/images/team/psicologia.svg",
   },
   {
-    quote:
+    Icon: Stethoscope,
+    area: "Psiquiatria",
+    description:
       "Avaliação especializada, orientação diagnóstica e acompanhamento para cuidado integral em saúde mental.",
-    name: "Profissional de Psiquiatria",
-    designation: "Psiquiatria",
-    src: "/images/team/psiquiatria.svg",
   },
   {
-    quote:
-      "Acompanhamento voltado para reabilitação, fortalecimento, funcionalidade e melhora progressiva da qualidade de vida.",
-    name: "Profissional de Reabilitação",
-    designation: "Reabilitação",
-    src: "/images/team/reabilitacao.svg",
+    Icon: HeartHandshake,
+    area: "Reabilitação",
+    description:
+      "Acompanhamento para reabilitação, fortalecimento, funcionalidade e melhora progressiva da qualidade de vida.",
+  },
+  {
+    Icon: Baby,
+    area: "Atendimento infantil",
+    description:
+      "Suporte ao desenvolvimento global com atenção à criança e orientação à família ao longo do processo.",
+  },
+  {
+    Icon: ClipboardList,
+    area: "Avaliações",
+    description:
+      "Avaliação inicial para entender qual especialidade faz mais sentido para cada necessidade e momento de vida.",
   },
 ];
 
@@ -38,10 +52,9 @@ export default function Team() {
   return (
     <section
       id="equipe"
-      className="relative py-[112px] overflow-hidden"
+      className="relative py-24 overflow-hidden"
       style={{ background: "#F8FBFC" }}
     >
-      {/* Glow orbs sutis, mesmo padrão do Hero */}
       <div
         aria-hidden
         className="pointer-events-none absolute rounded-full"
@@ -50,8 +63,7 @@ export default function Team() {
           height: 520,
           right: -180,
           top: -80,
-          background:
-            "radial-gradient(circle, rgba(35,183,174,0.10), transparent 70%)",
+          background: "radial-gradient(circle, rgba(35,183,174,0.10), transparent 70%)",
         }}
       />
       <div
@@ -62,62 +74,60 @@ export default function Team() {
           height: 400,
           left: -160,
           bottom: -100,
-          background:
-            "radial-gradient(circle, rgba(75,11,107,0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(75,11,107,0.07), transparent 70%)",
         }}
       />
 
-      <div className="container relative z-10 flex flex-col items-center">
-        {/* Header */}
-        <Reveal className="text-center mb-12 max-w-[640px]">
+      <div className="container relative z-10">
+        <Reveal className="text-center mb-12 max-w-[600px] mx-auto">
           <span className="eyebrow">Equipe multidisciplinar</span>
           <h2 className="m-0 mb-4" style={{ color: "var(--plum)" }}>
             Nossa equipe de cuidado.
           </h2>
-          <p
-            className="text-base leading-[1.7] m-0"
-            style={{ color: "var(--muted)" }}
-          >
+          <p className="text-base leading-[1.7] m-0" style={{ color: "var(--muted)" }}>
             Profissionais preparados para acolher, avaliar e acompanhar cada
             paciente com escuta, responsabilidade e atenção individualizada.
           </p>
         </Reveal>
 
-        {/* Texto de apoio */}
-        <Reveal className="text-center max-w-[560px] mb-14">
-          <p
-            className="text-sm leading-[1.75] m-0"
-            style={{ color: "var(--muted)" }}
-          >
-            Na Espaço Vida, o cuidado é construído por diferentes olhares. Cada
-            profissional contribui para um acompanhamento mais completo, humano
-            e alinhado às necessidades de cada fase da vida.
-          </p>
-        </Reveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {areas.map((item, i) => {
+            const Icon = item.Icon;
+            return (
+              <Reveal key={item.area} delay={i * 55}>
+                <article
+                  className="card-hover flex flex-col gap-4 p-6 rounded-[24px] border h-full"
+                  style={{
+                    background: "#FFFFFF",
+                    borderColor: "#E7DDEC",
+                    boxShadow: "var(--shadow-soft)",
+                  }}
+                >
+                  <div
+                    className="w-11 h-11 rounded-xl grid place-items-center"
+                    style={{ background: "var(--teal-soft)", color: "var(--purple)" }}
+                  >
+                    <Icon size={22} />
+                  </div>
+                  <h3
+                    className="m-0 font-black"
+                    style={{ color: "var(--plum)", fontSize: "1rem" }}
+                  >
+                    {item.area}
+                  </h3>
+                  <p
+                    className="text-sm leading-[1.65] flex-1 m-0"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {item.description}
+                  </p>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
 
-        {/* Componente circular */}
-        <Reveal className="w-full flex justify-center">
-          <CircularTestimonials
-            testimonials={teamMembers}
-            autoplay={true}
-            colors={{
-              name: "#25182F",
-              designation: "#4B0B6B",
-              testimony: "#74687D",
-              arrowBackground: "#4B0B6B",
-              arrowForeground: "#FFFFFF",
-              arrowHoverBackground: "#23B7AE",
-            }}
-            fontSizes={{
-              name: "1.5rem",
-              designation: "1rem",
-              quote: "1.05rem",
-            }}
-          />
-        </Reveal>
-
-        {/* Rodapé integrado */}
-        <Reveal className="mt-14 w-full max-w-[620px] text-center">
+        <Reveal className="mt-12 max-w-[580px] mx-auto text-center">
           <div
             className="px-8 py-6 rounded-[20px] border"
             style={{
@@ -131,10 +141,7 @@ export default function Team() {
             >
               Cuidado integrado em cada etapa
             </p>
-            <p
-              className="text-sm leading-[1.7] m-0"
-              style={{ color: "var(--muted)" }}
-            >
+            <p className="text-sm leading-[1.7] m-0" style={{ color: "var(--muted)" }}>
               As especialidades se conectam para compreender cada paciente de
               forma mais completa.
             </p>

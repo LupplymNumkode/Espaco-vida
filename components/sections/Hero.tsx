@@ -10,7 +10,7 @@ const trustIcons = [Star, CheckCircle2, MapPin, HeartHandshake];
 export default function Hero() {
   return (
     <section
-      className="relative pt-[118px] sm:pt-[140px] pb-14 sm:pb-[84px] overflow-hidden"
+      className="relative pt-[100px] sm:pt-[120px] pb-14 sm:pb-[72px] overflow-hidden"
       id="inicio"
     >
       {/* Glow orbs — sutis */}
@@ -107,14 +107,13 @@ export default function Hero() {
             {/* Imagem principal */}
             <div
               className="relative rounded-[32px] overflow-hidden"
-              style={{ boxShadow: "0 32px 80px rgba(75,11,107,0.16)" }}
+              style={{ height: "clamp(280px, 36vw, 420px)", boxShadow: "0 32px 80px rgba(75,11,107,0.16)" }}
             >
               <Image
                 src="/assets/espaco-vida/ImagemHero.png"
                 alt="Atendimento acolhedor na Espaço Vida Reabilitação"
-                width={600}
-                height={500}
-                className="w-full h-auto object-cover"
+                fill
+                className="object-cover object-top"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
