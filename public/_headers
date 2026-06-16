@@ -1,0 +1,19 @@
+# Cloudflare Pages — controle de cache
+
+# HTML e rotas: nunca cachear, sempre buscar versão fresca
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Assets Next.js com hash no nome: cachear para sempre (o nome muda a cada build)
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagens e arquivos públicos: cache moderado
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/images/*
+  Cache-Control: public, max-age=3600, must-revalidate
