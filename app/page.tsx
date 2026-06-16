@@ -6,6 +6,7 @@ import Specialties from "@/components/sections/Specialties";
 import CareGuide from "@/components/sections/CareGuide";
 import SpecialtyGrid from "@/components/sections/SpecialtyGrid";
 import About from "@/components/sections/About";
+import Gallery from "@/components/sections/Gallery";
 import Audience from "@/components/sections/Audience";
 import Journey from "@/components/sections/Journey";
 import Team from "@/components/sections/Team";
@@ -30,6 +31,7 @@ export default function Home() {
         <CareGuide />
         <SpecialtyGrid />
         <About />
+        <Gallery />
         <Team />
         <Audience />
         <Journey />

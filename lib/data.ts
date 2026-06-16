@@ -15,6 +15,7 @@ export const navItems = [
   { label: "Especialidades", href: "#especialidades" },
   { label: "Guia interativo", href: "#guia" },
   { label: "Quem somos", href: "#sobre" },
+  { label: "Galeria", href: "#galeria" },
   { label: "Equipe", href: "#equipe" },
   { label: "Localização", href: "#localizacao" },
   { label: "Trabalhe conosco", href: "#trabalhe" },
