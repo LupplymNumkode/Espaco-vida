@@ -10,6 +10,7 @@ import Gallery from "@/components/sections/Gallery";
 import Audience from "@/components/sections/Audience";
 import Journey from "@/components/sections/Journey";
 import Team from "@/components/sections/Team";
+import TeamMembers from "@/components/sections/TeamMembers";
 import Reviews from "@/components/sections/Reviews";
 import Location from "@/components/sections/Location";
 import WorkWithUs from "@/components/sections/WorkWithUs";
@@ -33,6 +34,7 @@ export default function Home() {
         <About />
         <Gallery />
         <Team />
+        <TeamMembers />
         <Audience />
         <Journey />
         <Reviews />

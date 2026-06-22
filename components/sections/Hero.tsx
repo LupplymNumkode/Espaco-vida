@@ -110,10 +110,10 @@ export default function Hero() {
               style={{ height: "clamp(280px, 36vw, 420px)", boxShadow: "0 32px 80px rgba(75,11,107,0.16)" }}
             >
               <Image
-                src="/assets/espaco-vida/ImagemHero.png"
+                src="/assets/espaco-vida/ImagemHero.jpg"
                 alt="Atendimento acolhedor na Espaço Vida Reabilitação"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

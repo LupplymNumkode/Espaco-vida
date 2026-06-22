@@ -1,37 +1,10 @@
-import InteractiveSelector, { type SelectorItem } from "@/components/ui/interactive-selector";
+import Image from "next/image";
 import Reveal from "@/components/utils/Reveal";
 
-const galleryItems: SelectorItem[] = [
-  {
-    title: "Recepção acolhedora",
-    description:
-      "Um ambiente tranquilo para receber pacientes e famílias desde o primeiro contato.",
-    image: "/assets/espaco-vida/recepcao.png",
-  },
-  {
-    title: "Salas preparadas",
-    description:
-      "Espaços pensados para avaliações, atendimentos e acompanhamento individualizado.",
-    image: "/assets/espaco-vida/sala-de-atendimento.png",
-  },
-  {
-    title: "Cuidado infantil",
-    description:
-      "Ambientes adaptados para acolher crianças com segurança, escuta e atenção.",
-    image: "/assets/espaco-vida/espaco-infantil.png",
-  },
-  {
-    title: "Detalhes que acolhem",
-    description:
-      "Cada detalhe contribui para uma experiência mais humana, leve e organizada.",
-    image: "/assets/espaco-vida/outrocard.png",
-  },
-  {
-    title: "Equipe e cuidado",
-    description:
-      "Uma clínica construída para conectar especialidades em torno da evolução de cada paciente.",
-    image: "/assets/espaco-vida/ImagemHero.png",
-  },
+const photos = [
+  "0-1", "0-2", "0-3", "0-4", "0-5", "0-6", "0-7", "0-8", "0-9",
+  "0-10", "0-11", "0-12", "0-13", "0-14", "0-17", "0-20",
+  "0-31", "0-32", "0-33", "0-35", "0-37", "0-38", "0-39", "0-40",
 ];
 
 export default function Gallery() {
@@ -57,7 +30,27 @@ export default function Gallery() {
         </Reveal>
 
         <Reveal>
-          <InteractiveSelector items={galleryItems} />
+          <div
+            className="columns-2 md:columns-3 lg:columns-4 gap-3"
+            style={{ columnGap: "12px" }}
+          >
+            {photos.map((name) => (
+              <div
+                key={name}
+                className="relative mb-3 overflow-hidden"
+                style={{ borderRadius: "12px", breakInside: "avoid" }}
+              >
+                <Image
+                  src={`/assets/espaco-vida/${name}.jpg`}
+                  alt="Foto da clínica Espaço Vida"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                  style={{ display: "block" }}
+                />
+              </div>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>
