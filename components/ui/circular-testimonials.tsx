@@ -132,6 +132,10 @@ export const CircularTestimonials = ({
     const isActive = index === activeIndex;
     const isLeft = (activeIndex - 1 + testimonialsLength) % testimonialsLength === index;
     const isRight = (activeIndex + 1) % testimonialsLength === index;
+    const isMobile = containerWidth < 768;
+    if (isMobile && !isActive) {
+      return { zIndex: 1, opacity: 0, pointerEvents: "none", transition: "all 0.8s cubic-bezier(.4,2,.3,1)" };
+    }
     if (isActive) {
       return {
         zIndex: 3,
@@ -276,16 +280,17 @@ export const CircularTestimonials = ({
         .testimonial-container {
           width: 100%;
           max-width: 56rem;
-          padding: 2rem;
+          padding: 1rem;
         }
         .testimonial-grid {
           display: grid;
-          gap: 5rem;
+          gap: 2rem;
         }
         .image-container {
           position: relative;
           width: 100%;
-          height: 24rem;
+          height: 20rem;
+          overflow: hidden;
           perspective: 1000px;
         }
         .testimonial-image {
@@ -331,8 +336,16 @@ export const CircularTestimonials = ({
           display: inline-block;
         }
         @media (min-width: 768px) {
+          .testimonial-container {
+            padding: 2rem;
+          }
           .testimonial-grid {
             grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+          }
+          .image-container {
+            height: 24rem;
+            overflow: visible;
           }
           .arrow-buttons {
             padding-top: 0;

@@ -174,7 +174,7 @@ export default function Hero() {
                   <a
                     key={href}
                     href={href}
-                    className="flex items-center gap-3 p-3 rounded-2xl border text-sm font-[700] transition-all duration-200 hover:bg-[#DFF8F5] hover:border-[#23B7AE]"
+                    className="flex items-center gap-2 p-2.5 rounded-2xl border text-[0.78rem] font-[700] transition-all duration-200 hover:bg-[#DFF8F5] hover:border-[#23B7AE]"
                     style={{
                       color: "var(--purple)",
                       borderColor: "#E7DDEC",
