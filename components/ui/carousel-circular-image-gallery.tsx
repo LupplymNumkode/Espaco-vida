@@ -116,22 +116,25 @@ export function ImageGallery() {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-3 sm:gap-6">
+      {/* Mobile: botões sobrepostos nas bordas; Desktop: flex com botões fora */}
+      <div className="relative flex items-center justify-center sm:gap-6">
         {/* Botão anterior */}
         <button
-          className="flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/20 bg-white/95 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.12)] outline-none transition-all duration-300 hover:scale-110 hover:bg-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10
+                     sm:static sm:translate-y-0
+                     flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/20 bg-white/95 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.12)] outline-none transition-all duration-300 hover:scale-110 hover:bg-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
           onClick={prev}
           disabled={disabled}
           aria-label="Foto anterior"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
 
-        {/* Carrossel */}
+        {/* Carrossel — 85vw no mobile, 72vmin no desktop */}
         <div
-          className="relative h-[72vmin] w-[72vmin] max-h-[520px] max-w-[520px] overflow-hidden rounded-[20px] shadow-[0_2.8px_2.2px_rgba(0,0,0,0.02),0_6.7px_5.3px_rgba(0,0,0,0.028),0_12.5px_10px_rgba(0,0,0,0.035),0_22.3px_17.9px_rgba(0,0,0,0.042),0_41.8px_33.4px_rgba(0,0,0,0.05),0_100px_80px_rgba(0,0,0,0.07)] cursor-pointer group"
+          className="relative h-[85vw] w-[85vw] sm:h-[72vmin] sm:w-[72vmin] max-h-[520px] max-w-[520px] overflow-hidden rounded-[20px] shadow-[0_2.8px_2.2px_rgba(0,0,0,0.02),0_6.7px_5.3px_rgba(0,0,0,0.028),0_12.5px_10px_rgba(0,0,0,0.035),0_22.3px_17.9px_rgba(0,0,0,0.042),0_41.8px_33.4px_rgba(0,0,0,0.05),0_100px_80px_rgba(0,0,0,0.07)] cursor-pointer group"
           onClick={() => { if (!disabled) setLightboxOpen(true) }}
         >
           {gsapReady &&
@@ -177,12 +180,14 @@ export function ImageGallery() {
 
         {/* Botão próximo */}
         <button
-          className="flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/20 bg-white/95 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.12)] outline-none transition-all duration-300 hover:scale-110 hover:bg-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10
+                     sm:static sm:translate-y-0
+                     flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/20 bg-white/95 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.12)] outline-none transition-all duration-300 hover:scale-110 hover:bg-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
           onClick={next}
           disabled={disabled}
           aria-label="Próxima foto"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
             <path d="M9 18l6-6-6-6" />
           </svg>
         </button>
@@ -333,7 +338,7 @@ function GalleryImage({ url, title, open, inPlace, id, onInPlace, total }: Galle
       </defs>
       <g clipPath={`url(#${id}${inPlace ? "_squareClip" : "_circleClip"})`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <image width={width} height={height} href={url} className="pointer-events-none" aria-label={title} />
+        <image width={width} height={height} href={url} className="pointer-events-none" aria-label={title} preserveAspectRatio="xMidYMid slice" />
       </g>
     </svg>
   )
