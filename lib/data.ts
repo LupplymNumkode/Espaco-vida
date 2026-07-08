@@ -13,12 +13,9 @@
 export const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Especialidades", href: "#especialidades" },
-  { label: "Guia interativo", href: "#guia" },
-  { label: "Quem somos", href: "#sobre" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Equipe", href: "#equipe" },
+  { label: "Espaço", href: "#galeria" },
+  { label: "Equipe", href: "#profissionais" },
   { label: "Localização", href: "#localizacao" },
-  { label: "Trabalhe conosco", href: "#trabalhe" },
   { label: "Dúvidas", href: "#faq" },
 ] as const;
 
@@ -50,42 +47,42 @@ export type Specialty = {
 export const specialties: Specialty[] = [
   {
     title: "Fonoaudiologia",
-    text: "Atendimento voltado para fala, linguagem, voz, comunicação, deglutição e desenvolvimento infantil.",
+    text: "Fala, linguagem, comunicação, voz, deglutição e desenvolvimento infantil.",
     icon: "Mic",
     cta: "Tenho interesse",
     whatsappMessage: "Olá! Gostaria de saber mais sobre Fonoaudiologia na Espaço Vida.",
   },
   {
     title: "Psicologia",
-    text: "Acolhimento emocional, orientação familiar, saúde mental, desenvolvimento e acompanhamento terapêutico.",
+    text: "Acolhimento emocional, saúde mental, orientação familiar e acompanhamento terapêutico.",
     icon: "Brain",
     cta: "Tenho interesse",
     whatsappMessage: "Olá! Gostaria de saber mais sobre Psicologia na Espaço Vida.",
   },
   {
     title: "Psiquiatria",
-    text: "Avaliação e acompanhamento especializado para diagnóstico, tratamento e evolução do paciente.",
+    text: "Avaliação, diagnóstico e acompanhamento especializado.",
     icon: "Stethoscope",
     cta: "Tenho interesse",
     whatsappMessage: "Olá! Gostaria de saber mais sobre Psiquiatria na Espaço Vida.",
   },
   {
     title: "Reabilitação",
-    text: "Recuperação funcional, fortalecimento, orientação e cuidado individualizado para melhora da qualidade de vida.",
+    text: "Recuperação funcional, fortalecimento e cuidado individualizado.",
     icon: "HeartHandshake",
     cta: "Tenho interesse",
     whatsappMessage: "Olá! Gostaria de saber mais sobre Reabilitação na Espaço Vida.",
   },
   {
     title: "Atendimento infantil",
-    text: "Acompanhamento para fala, comportamento, aprendizagem, desenvolvimento e suporte às famílias.",
+    text: "Desenvolvimento, comportamento, fala, aprendizagem e suporte às famílias.",
     icon: "Baby",
     cta: "Tenho interesse",
     whatsappMessage: "Olá! Gostaria de saber mais sobre Atendimento infantil na Espaço Vida.",
   },
   {
     title: "Avaliações",
-    text: "Primeira escuta, direcionamento e construção de um plano de cuidado personalizado para cada necessidade.",
+    text: "Primeira escuta para entender a necessidade e indicar o melhor caminho.",
     icon: "ClipboardList",
     cta: "Começar avaliação",
     whatsappMessage: "Olá! Gostaria de começar uma avaliação na Espaço Vida.",
@@ -157,23 +154,23 @@ export type JourneyStep = {
 
 export const journeySteps: JourneyStep[] = [
   {
-    title: "Você encontra a clínica",
-    text: "Pelo Google, Instagram, indicação ou link na bio, você chega a uma página clara e acolhedora.",
-    icon: "MapPin",
-  },
-  {
-    title: "Entende as possibilidades",
-    text: "Você conhece as especialidades e identifica qual caminho faz mais sentido para sua necessidade.",
-    icon: "ClipboardList",
-  },
-  {
-    title: "Conversa pelo WhatsApp",
-    text: "A equipe orienta sobre horários, avaliação, endereço e próximos passos do atendimento.",
+    title: "Entre em contato",
+    text: "Chame pelo WhatsApp e conte brevemente sua necessidade.",
     icon: "MessageCircle",
   },
   {
-    title: "Inicia o cuidado",
-    text: "A primeira avaliação ajuda a construir um plano de acompanhamento personalizado.",
+    title: "Receba orientação",
+    text: "A equipe indica o caminho ou profissional mais adequado.",
+    icon: "ClipboardList",
+  },
+  {
+    title: "Agende a avaliação",
+    text: "Você combina data, horário e próximos passos.",
+    icon: "CheckCircle2",
+  },
+  {
+    title: "Inicie o cuidado",
+    text: "O acompanhamento é definido conforme cada caso.",
     icon: "HeartHandshake",
   },
 ];
@@ -262,24 +259,9 @@ export type FaqItem = {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Como sei qual especialidade procurar?",
-    answer:
-      "Você pode usar o guia interativo do site ou chamar no WhatsApp. A equipe orienta qual caminho faz mais sentido conforme a necessidade apresentada — sem julgamento, com calma.",
-  },
-  {
-    question: "A clínica atende crianças e adultos?",
-    answer:
-      "Sim. A Espaço Vida atende diferentes fases da vida: crianças em desenvolvimento, adolescentes, adultos e famílias. Cada atendimento é ajustado à necessidade e ao momento de cada pessoa.",
-  },
-  {
-    question: "É necessário encaminhamento médico?",
+    question: "Precisa de encaminhamento médico?",
     answer:
       "Em geral, não é necessário encaminhamento para dar início ao processo. O primeiro passo pode ser uma avaliação inicial, onde a equipe orienta o melhor caminho a seguir.",
-  },
-  {
-    question: "Como funciona o primeiro contato?",
-    answer:
-      "O paciente ou familiar chama pelo WhatsApp, informa a necessidade principal e recebe orientação sobre avaliação, disponibilidade e próximos passos do atendimento.",
   },
   {
     question: "A clínica atende por convênio?",

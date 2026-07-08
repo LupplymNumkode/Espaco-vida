@@ -17,14 +17,14 @@ export default function Specialties() {
           <div>
             <span className="eyebrow">Especialidades</span>
             <h2 className="m-0" style={{ color: "var(--plum)" }}>
-              Cuidado completo, do primeiro{" "}
+              Encontre o cuidado{" "}
               <br className="hidden md:block" />
-              contato à evolução.
+              certo para você.
             </h2>
           </div>
           <p className="md:max-w-[360px] text-base leading-[1.65]" style={{ color: "var(--muted)" }}>
-            Cada área foi organizada para pacientes e familiares entenderem quando procurar
-            ajuda e qual caminho seguir.
+            Escolha uma área ou responda algumas perguntas rápidas para entender por onde
+            começar.
           </p>
         </Reveal>
 
@@ -82,6 +82,22 @@ export default function Specialties() {
             );
           })}
         </div>
+
+        <Reveal className="mt-8 flex justify-center">
+          <a
+            href="#guia-interativo"
+            className="inline-flex items-center gap-2 h-[50px] px-6 rounded-full text-sm font-[900] border transition-all duration-200 hover:-translate-y-0.5"
+            style={{
+              color: "var(--purple)",
+              borderColor: "#E7DDEC",
+              background: "#FFFFFF",
+              boxShadow: "var(--shadow-soft)",
+            }}
+          >
+            <HelpCircle size={17} />
+            Não sei qual escolher
+          </a>
+        </Reveal>
       </div>
     </section>
   );

@@ -14,32 +14,32 @@ const audienceCards: AudienceCard[] = [
   {
     icon: Baby,
     title: "Crianças em desenvolvimento",
-    text: "Acompanhamento de fala, aprendizagem, comportamento, rotina e desenvolvimento global, com escuta atenta às necessidades da criança e da família.",
+    text: "Fala, aprendizagem, comportamento e rotina.",
   },
   {
     icon: Users,
     title: "Adolescentes",
-    text: "Suporte para saúde emocional, comportamento, identidade e desafios desta fase da vida, com abordagem respeitosa e adaptada à faixa etária.",
+    text: "Saúde emocional, comportamento e desafios da fase.",
   },
   {
     icon: Brain,
     title: "Adultos",
-    text: "Cuidado para saúde mental, processos emocionais, reabilitação funcional e bem-estar geral ao longo da vida adulta.",
+    text: "Saúde mental, reabilitação funcional e bem-estar.",
   },
   {
     icon: Users,
     title: "Famílias e responsáveis",
-    text: "Orientação para quem acompanha um familiar em processo de cuidado, com clareza sobre sinais, possibilidades e próximos passos.",
+    text: "Orientação para quem acompanha o processo de cuidado.",
   },
   {
     icon: HeartHandshake,
     title: "Pessoas em reabilitação",
-    text: "Acompanhamento individualizado para recuperação funcional, fortalecimento e melhora progressiva da qualidade de vida.",
+    text: "Recuperação, fortalecimento e qualidade de vida.",
   },
   {
     icon: HelpCircle,
-    title: "Quem ainda não sabe por onde começar",
-    text: "A clínica oferece uma primeira escuta para ajudar a identificar qual especialidade faz mais sentido para a sua necessidade.",
+    title: "Não sei por onde começar",
+    text: "A equipe orienta o primeiro passo pelo WhatsApp.",
   },
 ];
 
@@ -81,17 +81,17 @@ export default function Audience() {
               Para quem é
             </span>
             <h2 className="m-0 text-white">
-              Cuidado para diferentes{" "}
+              Cuidado para crianças,{" "}
               <br className="hidden sm:block" />
-              fases e necessidades.
+              adultos e famílias.
             </h2>
           </div>
           <p
             className="md:max-w-[340px] text-base leading-[1.65]"
             style={{ color: "rgba(255,255,255,0.68)" }}
           >
-            A Espaço Vida acolhe pessoas em diferentes momentos da vida, com atenção às
-            particularidades de cada situação.
+            Cada pessoa chega com uma necessidade. A primeira escuta ajuda a indicar o
+            melhor caminho.
           </p>
         </Reveal>
 
@@ -135,12 +135,6 @@ export default function Audience() {
             );
           })}
         </div>
-
-        <Reveal>
-          <p className="text-center text-sm mt-12" style={{ color: "rgba(255,255,255,0.45)" }}>
-            Não sabe exatamente qual é o seu caso? A equipe pode orientar a partir do primeiro contato.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import {
-  MapPin, ClipboardList, MessageCircle, HeartHandshake,
+  MapPin, ClipboardList, MessageCircle, HeartHandshake, CheckCircle2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { journeySteps, type IconKey } from "@/lib/data";
@@ -10,6 +10,7 @@ const iconMap: Partial<Record<IconKey, LucideIcon>> = {
   ClipboardList,
   MessageCircle,
   HeartHandshake,
+  CheckCircle2,
 };
 
 const isHighlighted = (index: number) => index === 0 || index === journeySteps.length - 1;
@@ -20,14 +21,10 @@ export default function Journey() {
       <div className="container">
         {/* Header */}
         <Reveal className="text-center max-w-[560px] mx-auto mb-12">
-          <span className="eyebrow">Como funciona</span>
+          <span className="eyebrow">Como começar</span>
           <h2 className="m-0" style={{ color: "var(--plum)" }}>
-            Uma jornada simples para começar com segurança.
+            4 passos para iniciar o cuidado.
           </h2>
-          <p className="mt-4 text-base leading-[1.65]" style={{ color: "var(--muted)" }}>
-            Do interesse inicial ao primeiro atendimento, cada etapa é pensada para tornar
-            o cuidado acessível.
-          </p>
         </Reveal>
 
         {/* Steps */}
@@ -119,18 +116,12 @@ export default function Journey() {
 
         {/* Nota */}
         <Reveal>
-          <div
-            className="mt-14 mx-auto max-w-[580px] p-5 rounded-2xl text-center text-sm leading-relaxed border"
-            style={{
-              background: "var(--teal-soft)",
-              borderColor: "rgba(35,183,174,0.25)",
-              color: "var(--muted)",
-            }}
+          <p
+            className="mt-10 text-center text-sm leading-relaxed"
+            style={{ color: "var(--muted)" }}
           >
-            <strong style={{ color: "var(--plum)" }}>Cada caminho é único.</strong>{" "}
-            A jornada descrita é uma orientação geral. O plano de acompanhamento é sempre
-            construído de forma individualizada com base na necessidade de cada paciente.
-          </div>
+            Cada plano é individualizado conforme a necessidade do paciente.
+          </p>
         </Reveal>
       </div>
     </section>

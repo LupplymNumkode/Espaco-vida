@@ -33,15 +33,14 @@ export default function FinalCTA() {
           </span>
 
           <h2 className="m-0 text-white" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
-            Comece pelo primeiro contato.
+            Vamos encontrar o melhor caminho para o seu cuidado?
           </h2>
 
           <p
             className="text-base leading-[1.65] max-w-[480px] m-0"
             style={{ color: "rgba(255,255,255,0.75)" }}
           >
-            Se você busca orientação, avaliação ou quer entender qual especialidade procurar,
-            fale com a Espaço Vida pelo WhatsApp.
+            Fale com a equipe pelo WhatsApp e receba orientação sobre o próximo passo.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mt-1">

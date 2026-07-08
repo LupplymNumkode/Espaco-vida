@@ -66,9 +66,8 @@ export default function Hero() {
               className="mt-6 text-[1.05rem] leading-[1.65] max-w-[540px]"
               style={{ color: "var(--muted)" }}
             >
-              A Espaço Vida Reabilitação oferece atendimento acolhedor e multidisciplinar
-              para crianças, adolescentes, adultos e famílias, com foco em escuta, evolução
-              e qualidade de vida.
+              Atendimento acolhedor e multidisciplinar para crianças, adolescentes,
+              adultos e famílias em Palhoça/SC.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 mt-8">

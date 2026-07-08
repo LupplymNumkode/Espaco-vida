@@ -37,19 +37,17 @@ export default function CareGuide() {
 
   return (
     <section
-      className="py-20"
+      className="pt-4 pb-20"
       id="guia-interativo"
-      style={{ background: "var(--lilac)" }}
     >
       <div className="container">
-        {/* Header centralizado */}
-        <div className="text-center max-w-[580px] mx-auto mb-12">
-          <span className="eyebrow">Guia de especialidades</span>
-          <h2 className="m-0" style={{ color: "var(--plum)" }}>
-            Qual especialidade é certa para você?
-          </h2>
-          <p className="mt-4 text-base leading-[1.65]" style={{ color: "var(--muted)" }}>
-            Responda 3 perguntas rápidas para entender qual caminho faz mais sentido.
+        {/* Header compacto */}
+        <div className="text-center max-w-[580px] mx-auto mb-8">
+          <p
+            className="text-sm font-[700] leading-[1.6] m-0"
+            style={{ color: "var(--muted)" }}
+          >
+            Ainda não sabe qual escolher? Responda 3 perguntas rápidas.
           </p>
         </div>
 

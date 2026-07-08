@@ -4,7 +4,6 @@ import FloatingActions from "@/components/layout/FloatingActions";
 import Hero from "@/components/sections/Hero";
 import Specialties from "@/components/sections/Specialties";
 import CareGuide from "@/components/sections/CareGuide";
-import SpecialtyGrid from "@/components/sections/SpecialtyGrid";
 import About from "@/components/sections/About";
 import Gallery from "@/components/sections/Gallery";
 import Audience from "@/components/sections/Audience";
@@ -30,7 +29,6 @@ export default function Home() {
         <Hero />
         <Specialties />
         <CareGuide />
-        <SpecialtyGrid />
         <About />
         <Gallery />
         <Team />

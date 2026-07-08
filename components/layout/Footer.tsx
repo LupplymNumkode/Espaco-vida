@@ -68,7 +68,6 @@ export default function Footer() {
               {[
                 { label: "Especialidades", href: "#especialidades" },
                 { label: "Quem somos", href: "#sobre" },
-                { label: "Guia interativo", href: "#guia-interativo" },
                 { label: "Dúvidas frequentes", href: "#faq" },
               ].map(({ label, href }) => (
                 <a
