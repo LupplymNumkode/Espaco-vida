@@ -22,7 +22,7 @@
 
 | Item | Status | Como resolver |
 |---|---|---|
-| WhatsApp real da clínica | ⬜ Pendente | Inserir em `lib/whatsapp.ts` linha 7: `WHATSAPP_NUMBER = "5548XXXXXXXXX"` |
+| WhatsApp real da clínica | ✅ Concluído | `5548991672144` — número único confirmado pelo cliente em 2026-07-14, configurado em `lib/whatsapp.ts` |
 | Embed real do Google Maps | ⬜ Pendente | Inserir src do iframe em `lib/data.ts` › `locationData.mapsEmbedSrc` |
 | Horários de atendimento | ⬜ Pendente | Inserir em `lib/data.ts` › `locationData.hours` |
 | CEP completo | ⬜ Pendente | Inserir em `lib/data.ts` › `locationData.postalCode` |
@@ -34,12 +34,14 @@
 
 | Item | Status | Como resolver |
 |---|---|---|
-| Nomes completos dos profissionais | ⬜ Pendente | Atualizar `lib/data.ts` › `teamMembers` com `name` real |
-| Especialidades confirmadas | ⬜ Pendente | Atualizar `role` e `bio` em cada `TeamMember` |
-| Registros profissionais (CRP / CRFa / CRM / CREFITO) | ⬜ Pendente | Adicionar campo `registration` com número real |
-| Fotos dos profissionais | ⬜ Pendente | Adicionar em `public/assets/espaco-vida/equipe/` e atualizar `photoSrc` |
-| Marcar todos como `confirmed: true` | ⬜ Pendente | Mudar de `false` para `true` após validação |
-| Seção Team renderizando | ⬜ Pendente | Automaticamente visível quando há membros com `confirmed: true` |
+| Nomes completos dos profissionais | ✅ Concluído | 4 profissionais recebidas da cliente em 2026-07-14, em `lib/data.ts` › `teamMembers` |
+| Especialidades confirmadas | ✅ Concluído | `role` + `bio` são **texto literal** da cliente — não resumir nem reescrever |
+| Registros profissionais (CRP / CRFa / CRM / CREFITO) | ✅ Concluído | CRP 12/20750, CRN 6398, CRFª 3 - 11234, CRFa 8131- SC |
+| Fotos dos profissionais | ✅ Concluído | `public/images/team/` — 4 fotos, servidas via `next/image` |
+| Marcar todos como `confirmed: true` | ✅ Concluído | As 4 confirmadas |
+| Seção Team renderizando | ✅ Concluído | Grid de 4 cards + mini janela com a formação completa |
+| Autorização de cada profissional para ser listada | ⚠️ Atenção | Confirmar com a cliente se as 4 autorizaram nome, foto e registro no site |
+| Profissionais das demais especialidades | ⬜ Pendente | Faltam Psiquiatria Infantil, Neuropsicopedagogia e Fisioterapia — "até agora" são 4 |
 
 ---
 
@@ -80,7 +82,7 @@
 | OG image | ⬜ Pendente | Ver item 4 acima |
 | URL canônica final | ⬜ Pendente | Confirmar domínio e atualizar `lib/seo.ts` › `siteConfig.url` |
 | Schema.org MedicalClinic | ✅ Concluído (parcial) | `lib/schema.ts` — sem telefone/horário/avaliações (aguarda dados) |
-| Schema: adicionar telefone | ⬜ Pendente | Descomente em `lib/schema.ts` após WhatsApp confirmado |
+| Schema: adicionar telefone | ✅ Concluído | `lib/schema.ts` publica `telephone: +5548991672144` |
 | Schema: adicionar horário | ⬜ Pendente | Descomente em `lib/schema.ts` após horários confirmados |
 | Schema: adicionar aggregateRating | ⬜ Pendente | Descomente em `lib/schema.ts` após nota real do Google |
 | Sitemap.xml | ⬜ Pendente | Criar `app/sitemap.ts` após domínio definido |
@@ -92,7 +94,7 @@
 
 | Item | Status | Como verificar |
 |---|---|---|
-| Todos os links WhatsApp funcionando | ⬜ Pendente | Testar após WHATSAPP_NUMBER ser configurado |
+| Todos os links WhatsApp funcionando | ✅ Concluído | 7 links `wa.me/5548991672144` no HTML, nenhum `href="#"` restante |
 | Google Maps abrindo no link de direções | ✅ Concluído | URL de busca funcional |
 | Instagram abrindo corretamente | ✅ Concluído | URL confirmada |
 | Header em mobile 375px | ✅ Concluído | Revisar no DevTools |
@@ -137,7 +139,7 @@
 
 ## Resumo rápido — O mínimo para publicar
 
-1. ⬜ WhatsApp real configurado em `lib/whatsapp.ts`
+1. ✅ WhatsApp real configurado em `lib/whatsapp.ts`
 2. ⬜ Horários confirmados em `lib/data.ts`
 3. ⬜ Embed real do Maps em `lib/data.ts`
 4. ⬜ OG image criada

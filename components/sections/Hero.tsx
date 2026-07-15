@@ -1,11 +1,14 @@
 import Image from "next/image";
-import { ArrowRight, Star, HeartHandshake, Stethoscope, MapPin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Star, Stethoscope, MapPin, Ear, BrainCircuit, Users } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { trustItems } from "@/lib/data";
 import { whatsappMessages } from "@/lib/whatsapp";
 import WhatsappLink from "@/components/ui/WhatsappLink";
 
-const trustIcons = [Star, CheckCircle2, MapPin, HeartHandshake];
+const trustIcons = [Stethoscope, Ear, BrainCircuit, Users];
+
+/** Só publica indicadores confirmados — nunca um número não validado pelo cliente. */
+const confirmedTrustItems = trustItems.filter((item) => item.confirmed);
 
 export default function Hero() {
   return (
@@ -38,7 +41,7 @@ export default function Hero() {
           <div>
             {/* Chips */}
             <div className="flex flex-wrap gap-2 mb-7">
-              {["Palhoça - SC", "Cuidado multidisciplinar", "Atendimento humanizado"].map((tag) => (
+              {["Palhoça - SC", "Cuidado multidisciplinar", "Exames audiológicos", "Atendimento humanizado"].map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex items-center h-[34px] px-3.5 rounded-full text-[0.73rem] font-[900]"
@@ -66,8 +69,8 @@ export default function Hero() {
               className="mt-6 text-[1.05rem] leading-[1.65] max-w-[540px]"
               style={{ color: "var(--muted)" }}
             >
-              Atendimento acolhedor e multidisciplinar para crianças, adolescentes,
-              adultos e famílias em Palhoça/SC.
+              Especialidades, avaliações e exames audiológicos para crianças,
+              adolescentes, adultos e famílias em Palhoça/SC.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 mt-8">
@@ -166,12 +169,13 @@ export default function Hero() {
 
               <div className="flex flex-col gap-2">
                 {[
-                  { label: "Atendimento acolhedor", href: "#sobre", Icon: HeartHandshake },
                   { label: "Entender especialidades", href: "#especialidades", Icon: Stethoscope },
+                  { label: "Exames audiológicos", href: "#exames", Icon: Ear },
+                  { label: "Avaliação PAC", href: "#exames", Icon: BrainCircuit },
                   { label: "Como chegar", href: "#localizacao", Icon: MapPin },
                 ].map(({ label, href, Icon }) => (
                   <a
-                    key={href}
+                    key={label}
                     href={href}
                     className="flex items-center gap-2 p-2.5 rounded-2xl border text-[0.78rem] font-[700] transition-all duration-200 hover:bg-[#DFF8F5] hover:border-[#23B7AE]"
                     style={{
@@ -200,7 +204,7 @@ export default function Hero() {
           }}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:divide-x divide-[#E7DDEC]">
-            {trustItems.map((item, i) => {
+            {confirmedTrustItems.map((item, i) => {
               const Icon = trustIcons[i] ?? Star;
               return (
                 <div

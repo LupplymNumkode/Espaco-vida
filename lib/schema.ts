@@ -1,5 +1,6 @@
 import { siteConfig } from "./seo";
-import { locationData } from "./data";
+import { locationData, audiologyExams } from "./data";
+import { WHATSAPP_E164 } from "./whatsapp";
 
 /**
  * Schema.org JSON-LD for Espaço Vida Reabilitação.
@@ -8,7 +9,6 @@ import { locationData } from "./data";
  * are omitted entirely to avoid publishing incorrect information.
  *
  * TODOs:
- * - Add telephone when WhatsApp confirmed (use +55 48 format)
  * - Add openingHours when locationData.hours is confirmed
  * - Add aggregateRating when real Google reviews are collected
  * - Add employee array when team data is confirmed
@@ -23,6 +23,7 @@ export function buildClinicSchema() {
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
+    telephone: WHATSAPP_E164,
     logo: `${siteConfig.url}/assets/espaco-vida/espaco-vida-logo-transparent.png`,
     image: `${siteConfig.url}/assets/espaco-vida/ImagemHero.png`,
     address: {
@@ -42,10 +43,18 @@ export function buildClinicSchema() {
     medicalSpecialty: [
       "Fonoaudiologia",
       "Psicologia",
-      "Psiquiatria",
-      "Reabilitação",
-      "Atendimento infantil",
+      "Psicopedagogia",
+      "Neuropsicopedagogia",
+      "Psiquiatria Infantil",
+      "Fisioterapia",
+      "Nutrição",
     ],
+    // Exames audiológicos oferecidos — o PAC é o destaque comercial da clínica.
+    availableService: audiologyExams.map((exam) => ({
+      "@type": "MedicalTest",
+      name: exam.title,
+      description: exam.tagline,
+    })),
     sameAs: [
       siteConfig.instagram,
       // TODO: adicionar Google Business Profile URL quando confirmado
@@ -55,9 +64,6 @@ export function buildClinicSchema() {
 
     // TODO: adicionar quando reviews reais forem coletadas:
     // aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "N" },
-
-    // TODO: adicionar telefone quando WhatsApp for confirmado:
-    // telephone: "+55 48 XXXXX-XXXX",
   };
 
   // Remove geo entirely if coordinates are not set

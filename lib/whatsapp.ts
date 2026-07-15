@@ -1,13 +1,14 @@
 /**
  * Central WhatsApp utility for Espaço Vida Reabilitação.
  *
- * TODO: Replace WHATSAPP_NUMBER with the real number confirmed by the client.
- * Current value is a placeholder — do NOT publish without confirming.
- * See: 08-clientes/espacovida/CHECKLIST_DADOS_PENDENTES.md
+ * Número único da clínica — confirmado pelo cliente em 2026-07-14.
  */
 
-// TODO: confirmar com cliente — número atual é placeholder
-const WHATSAPP_NUMBER: string | null = null;
+/** Formato wa.me: DDI + DDD + celular de 9 dígitos, somente números. */
+const WHATSAPP_NUMBER: string | null = "5548991672144";
+
+/** E.164 — usado no schema.org e em links tel:. */
+export const WHATSAPP_E164 = "+5548991672144";
 
 /**
  * Returns a wa.me link if the number is confirmed, otherwise returns "#" (safe placeholder).
@@ -26,6 +27,8 @@ export const whatsappMessages = {
   default: "Olá! Gostaria de falar com a Espaço Vida.",
   avaliation: "Olá! Gostaria de agendar uma avaliação na Espaço Vida.",
   location: "Olá! Gostaria de saber como chegar na Espaço Vida.",
+  guidance:
+    "Olá! Não sei qual especialidade procurar e gostaria de uma orientação da equipe da Espaço Vida.",
   specialty: (name: string) =>
     `Olá! Gostaria de saber mais sobre ${name} na Espaço Vida.`,
   workWithUs: (fields: {

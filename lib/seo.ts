@@ -18,9 +18,10 @@ export const siteConfig = {
   googleBusinessName: null as string | null,
   tagline: "Cuidado humano para cada fase da vida.",
   description:
-    "Clínica multidisciplinar de saúde mental e reabilitação em Palhoça/SC. " +
-    "Especialidades: Fonoaudiologia, Psicologia, Psiquiatria, Reabilitação e Atendimento infantil. " +
-    "Atendimento acolhedor para crianças, adultos e famílias.",
+    "Clínica multidisciplinar em Palhoça/SC. Especialidades: Fonoaudiologia, Psicologia, " +
+    "Psicopedagogia, Neuropsicopedagogia, Psiquiatria Infantil, Fisioterapia e Nutrição. " +
+    "Exames audiológicos: Audiometria Tonal e Vocal, Imitanciometria e Processamento " +
+    "Auditivo Central (PAC). Atendimento acolhedor para crianças, adolescentes, adultos e famílias.",
   // TODO: confirmar domínio real com cliente
   url: "https://espacovidareabilitacao.com.br",
   locale: "pt_BR",
@@ -47,16 +48,26 @@ export const defaultMetadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
   keywords: [
-    "clínica reabilitação Palhoça",
+    // Exames — foco comercial atual da clínica
+    "processamento auditivo central Palhoça",
+    "exame PAC Palhoça",
+    "PAC fonoaudiologia Palhoça SC",
+    "exames audiológicos Palhoça",
+    "audiometria Palhoça SC",
+    "imitanciometria Palhoça",
+    "avaliação audiológica infantil Palhoça",
+    "teste de processamento auditivo Palhoça",
+    // Especialidades
     "fonoaudiologia Palhoça SC",
     "psicologia Palhoça SC",
-    "psiquiatria Palhoça",
-    "atendimento infantil Palhoça",
-    "reabilitação Palhoça SC",
-    "saúde mental Palhoça",
+    "psicopedagogia Palhoça",
+    "neuropsicopedagogia Palhoça",
+    "psiquiatria infantil Palhoça",
+    "fisioterapia Palhoça SC",
+    "nutrição Palhoça SC",
+    // Marca e genéricos
     "clínica multidisciplinar Palhoça",
     "Espaço Vida Reabilitação",
-    "clínica fonoaudiologia Palhoça",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,

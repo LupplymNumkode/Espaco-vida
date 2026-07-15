@@ -19,11 +19,22 @@ const config: Config = {
         },
         plum: "#25182F",
         surface: "#F8FBFC",
-        muted: "#74687D",
+        // `muted` mantém `text-muted`/`bg-muted` (DEFAULT) e ganha `text-muted-foreground`
+        muted: {
+          DEFAULT: "#74687D",
+          foreground: "#74687D",
+        },
         lilac: "#F4EFF8",
         teal: {
           soft: "#DFF8F5",
           light: "#EEFDFB",
+        },
+        // Tokens semânticos usados por componentes shadcn (ex.: animated-testimonials)
+        foreground: "#25182F",
+        secondary: {
+          // Mint claro da marca — botões de navegação visíveis sobre o fundo lilás
+          DEFAULT: "#DFF8F5",
+          foreground: "#25182F",
         },
       },
       fontFamily: {

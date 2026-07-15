@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MapPin, Mail } from "lucide-react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { whatsappMessages } from "@/lib/whatsapp";
+import { specialties } from "@/lib/data";
 import { siteConfig } from "@/lib/seo";
 import WhatsappLink from "@/components/ui/WhatsappLink";
 
@@ -88,14 +89,14 @@ export default function Footer() {
               Especialidades
             </h3>
             <div className="flex flex-col gap-3">
-              {["Psicologia", "Fonoaudiologia", "Psiquiatria", "Reabilitação", "Atendimento infantil"].map((sp) => (
+              {specialties.map((sp) => (
                 <a
-                  key={sp}
+                  key={sp.slug}
                   href="#especialidades"
                   className={`${linkClass} hover:text-purple`}
                   style={{ color: "var(--muted)" }}
                 >
-                  {sp}
+                  {sp.title}
                 </a>
               ))}
             </div>
