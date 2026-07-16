@@ -22,6 +22,8 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const dragStartX = useRef<number | null>(null);
+  const activeQuote = testimonials[active].quote;
+  const splitIndex = Math.ceil(activeQuote.length / 2);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -57,16 +59,16 @@ export const AnimatedTestimonials = ({
 
   return (
     <div
-      className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20 cursor-grab active:cursor-grabbing select-none", className)}
+      className={cn("max-w-sm md:max-w-7xl mx-auto px-4 md:px-8 lg:px-10 py-14 cursor-grab active:cursor-grabbing select-none", className)}
       style={{ touchAction: "pan-y" }}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerCancel={() => { dragStartX.current = null; }}
       aria-label="Carrossel de profissionais. Arraste para os lados ou use as setas."
     >
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div>
-          <div className="relative h-80 w-full">
+      <div className="relative grid grid-cols-1 md:grid-cols-[minmax(360px,0.9fr)_minmax(0,1.35fr)] items-start gap-12 lg:gap-16">
+        <div className="w-full max-w-[520px] mx-auto md:mx-0">
+          <div className="relative h-[420px] md:h-[540px] lg:h-[580px] w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -102,8 +104,8 @@ export const AnimatedTestimonials = ({
                   <Image
                     src={testimonial.src}
                     alt={testimonial.name}
-                    width={500}
-                    height={500}
+                    width={720}
+                    height={900}
                     draggable={false}
                     className="h-full w-full rounded-3xl object-cover object-center"
                   />
@@ -112,7 +114,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex min-h-[540px] lg:min-h-[580px] justify-between flex-col py-2">
           <motion.div
             key={active}
             initial={{
@@ -138,12 +140,28 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-muted-foreground">
               {testimonials[active].designation}
             </p>
-            <div className="mt-8 space-y-4 text-base leading-[1.7] text-muted-foreground">
-              {testimonials[active].quote.map((paragraph, index) => (
+            <div className="mt-8 space-y-4 text-base leading-[1.7] text-muted-foreground lg:hidden">
+              {activeQuote.map((paragraph, index) => (
                 <p key={index} className="m-0">
                   {paragraph}
                 </p>
               ))}
+            </div>
+            <div className="mt-8 hidden lg:grid grid-cols-2 gap-10 text-base leading-[1.7] text-muted-foreground">
+              <div className="space-y-4">
+                {activeQuote.slice(0, splitIndex).map((paragraph, index) => (
+                  <p key={index} className="m-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <div className="space-y-4">
+                {activeQuote.slice(splitIndex).map((paragraph, index) => (
+                  <p key={index + splitIndex} className="m-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
