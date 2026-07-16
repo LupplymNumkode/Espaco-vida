@@ -10,8 +10,8 @@ import Reveal from "@/components/utils/Reveal";
 /**
  * Apresentação da equipe com o componente AnimatedTestimonials.
  *
- * Cada profissional vira um "slide": foto, nome, cargo · registro e um resumo
- * da formação (bio[0], texto literal enviado pela cliente — ver lib/data.ts).
+ * Cada profissional vira um "slide": foto, nome, cargo · registro e todos os
+ * parágrafos enviados pela cliente (bio, texto literal — ver lib/data.ts).
  * São pessoas reais da clínica; não há conteúdo fabricado.
  */
 export default function TeamMembers() {
@@ -19,7 +19,7 @@ export default function TeamMembers() {
   if (members.length === 0) return null;
 
   const testimonials = members.map((member) => ({
-    quote: member.bio[0],
+    quote: member.bio,
     name: member.name,
     designation: `${member.role} · ${member.registration}`,
     src: member.photoSrc,
@@ -67,7 +67,7 @@ export default function TeamMembers() {
         </Reveal>
 
         <Reveal>
-          <AnimatedTestimonials testimonials={testimonials} autoplay />
+          <AnimatedTestimonials testimonials={testimonials} />
         </Reveal>
 
         <div className="flex justify-center mt-2">

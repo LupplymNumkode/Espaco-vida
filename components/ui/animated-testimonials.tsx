@@ -3,11 +3,11 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { cn } from "@/lib/utils";
 
 type Testimonial = {
-  quote: string;
+  quote: string[];
   name: string;
   designation: string;
   src: string;
@@ -15,14 +15,13 @@ type Testimonial = {
 
 export const AnimatedTestimonials = ({
   testimonials,
-  autoplay = false,
   className,
 }: {
   testimonials: Testimonial[];
-  autoplay?: boolean;
   className?: string;
 }) => {
   const [active, setActive] = useState(0);
+  const dragStartX = useRef<number | null>(null);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -36,13 +35,18 @@ export const AnimatedTestimonials = ({
     return index === active;
   };
 
-  useEffect(() => {
-    if (!autoplay) return;
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [autoplay, testimonials.length]);
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    dragStartX.current = event.clientX;
+  };
+
+  const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+    const distance = event.clientX - dragStartX.current;
+    dragStartX.current = null;
+    if (Math.abs(distance) < 50) return;
+    if (distance < 0) handleNext();
+    else handlePrev();
+  };
 
   // Rotação determinística por índice — evita Math.random (impuro no render, viola
   // react-hooks/purity) e o mismatch de hidratação SSR/cliente. Valores em [-10, 10].
@@ -52,7 +56,14 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}>
+    <div
+      className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20 cursor-grab active:cursor-grabbing select-none", className)}
+      style={{ touchAction: "pan-y" }}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={() => { dragStartX.current = null; }}
+      aria-label="Carrossel de profissionais. Arraste para os lados ou use as setas."
+    >
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <div className="relative h-80 w-full">
@@ -127,41 +138,27 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-muted-foreground">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-lg text-muted-foreground mt-8">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
+            <div className="mt-8 space-y-4 text-base leading-[1.7] text-muted-foreground">
+              {testimonials[active].quote.map((paragraph, index) => (
+                <p key={index} className="m-0">
+                  {paragraph}
+                </p>
               ))}
-            </motion.p>
+            </div>
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
+              type="button"
+              aria-label="Ver profissional anterior"
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
             >
               <IconArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
+              type="button"
+              aria-label="Ver próxima profissional"
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
             >
               <IconArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />

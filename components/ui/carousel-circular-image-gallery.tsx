@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback, type PointerEvent as ReactPointerEvent } from "react"
 
 declare global {
   interface Window {
@@ -51,7 +51,8 @@ export function ImageGallery() {
   const [inPlace, setInPlace] = useState(0)
   const [gsapReady, setGsapReady] = useState(false)
   const [lightboxOpen, setLightboxOpen] = useState(false)
-  const autoplayTimer = useRef<number | null>(null)
+  const dragStartX = useRef<number | null>(null)
+  const dragged = useRef(false)
 
   // Derivado: desabilita cliques enquanto a animação não terminou
   const disabled = opened !== inPlace
@@ -95,12 +96,20 @@ export function ImageGallery() {
     setOpened((cur) => (cur - 1 + images.length) % images.length)
   }, [])
 
-  useEffect(() => {
-    if (!gsapReady || lightboxOpen) return
-    if (autoplayTimer.current) clearInterval(autoplayTimer.current)
-    autoplayTimer.current = window.setInterval(next, 4500)
-    return () => { if (autoplayTimer.current) clearInterval(autoplayTimer.current) }
-  }, [opened, gsapReady, next, lightboxOpen])
+  const handlePointerDown = (event: ReactPointerEvent<HTMLElement>) => {
+    dragStartX.current = event.clientX
+    dragged.current = false
+  }
+
+  const handlePointerUp = (event: ReactPointerEvent<HTMLElement>) => {
+    if (dragStartX.current === null) return
+    const distance = event.clientX - dragStartX.current
+    dragStartX.current = null
+    if (Math.abs(distance) < 50 || disabled) return
+    dragged.current = true
+    if (distance < 0) next()
+    else prev()
+  }
 
   // Teclado no lightbox
   useEffect(() => {
@@ -134,8 +143,19 @@ export function ImageGallery() {
 
         {/* Carrossel — 85vw no mobile, 72vmin no desktop */}
         <div
-          className="relative h-[85vw] w-[85vw] sm:h-[72vmin] sm:w-[72vmin] max-h-[520px] max-w-[520px] overflow-hidden rounded-[20px] shadow-[0_2.8px_2.2px_rgba(0,0,0,0.02),0_6.7px_5.3px_rgba(0,0,0,0.028),0_12.5px_10px_rgba(0,0,0,0.035),0_22.3px_17.9px_rgba(0,0,0,0.042),0_41.8px_33.4px_rgba(0,0,0,0.05),0_100px_80px_rgba(0,0,0,0.07)] cursor-pointer group"
-          onClick={() => { if (!disabled) setLightboxOpen(true) }}
+          className="relative h-[85vw] w-[85vw] sm:h-[72vmin] sm:w-[72vmin] max-h-[520px] max-w-[520px] overflow-hidden rounded-[20px] shadow-[0_2.8px_2.2px_rgba(0,0,0,0.02),0_6.7px_5.3px_rgba(0,0,0,0.028),0_12.5px_10px_rgba(0,0,0,0.035),0_22.3px_17.9px_rgba(0,0,0,0.042),0_41.8px_33.4px_rgba(0,0,0,0.05),0_100px_80px_rgba(0,0,0,0.07)] cursor-grab active:cursor-grabbing group select-none"
+          style={{ touchAction: "pan-y" }}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={() => { dragStartX.current = null }}
+          onClick={() => {
+            if (dragged.current) {
+              dragged.current = false
+              return
+            }
+            if (!disabled) setLightboxOpen(true)
+          }}
+          aria-label="Galeria de fotos. Arraste para os lados, clique para ampliar ou use as setas."
         >
           {gsapReady &&
             images.map((image, i) => (
@@ -197,7 +217,17 @@ export function ImageGallery() {
       {lightboxOpen && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/92 backdrop-blur-md"
-          onClick={() => setLightboxOpen(false)}
+          style={{ touchAction: "pan-y" }}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={() => { dragStartX.current = null }}
+          onClick={() => {
+            if (dragged.current) {
+              dragged.current = false
+              return
+            }
+            setLightboxOpen(false)
+          }}
         >
           {/* Fechar */}
           <button
@@ -227,7 +257,10 @@ export function ImageGallery() {
             src={images[opened].url}
             alt={images[opened].title}
             className="max-h-[88vh] max-w-[88vw] object-contain rounded-xl shadow-2xl select-none"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              dragged.current = false
+              e.stopPropagation()
+            }}
             draggable={false}
           />
 
