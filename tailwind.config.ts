@@ -15,7 +15,7 @@ const config: Config = {
         violet: "#7C3DA3",
         mint: {
           DEFAULT: "#23B7AE",
-          dark: "#1A9E96",
+          dark: "#0E716C",
         },
         plum: "#25182F",
         surface: "#F8FBFC",

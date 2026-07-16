@@ -24,8 +24,8 @@ export function buildClinicSchema() {
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: WHATSAPP_E164,
-    logo: `${siteConfig.url}/assets/espaco-vida/espaco-vida-logo-transparent.png`,
-    image: `${siteConfig.url}/assets/espaco-vida/ImagemHero.png`,
+    logo: `${siteConfig.url}/assets/espaco-vida/logo-192.png`,
+    image: `${siteConfig.url}/assets/espaco-vida/hero-optimized.webp`,
     address: {
       "@type": "PostalAddress",
       streetAddress: locationData.address,

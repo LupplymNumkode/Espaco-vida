@@ -18,10 +18,7 @@ export const siteConfig = {
   googleBusinessName: null as string | null,
   tagline: "Cuidado humano para cada fase da vida.",
   description:
-    "Clínica multidisciplinar em Palhoça/SC. Especialidades: Fonoaudiologia, Psicologia, " +
-    "Psicopedagogia, Neuropsicopedagogia, Psiquiatria Infantil, Fisioterapia e Nutrição. " +
-    "Exames audiológicos: Audiometria Tonal e Vocal, Imitanciometria e Processamento " +
-    "Auditivo Central (PAC). Atendimento acolhedor para crianças, adolescentes, adultos e famílias.",
+    "Clínica multidisciplinar e exames audiológicos em Palhoça/SC. Fonoaudiologia, Psicologia, Nutrição e avaliação PAC. Agende pelo WhatsApp.",
   // TODO: confirmar domínio real com cliente
   url: "https://espacovidareabilitacao.com.br",
   locale: "pt_BR",
@@ -40,7 +37,7 @@ export const siteConfig = {
 
 export const defaultMetadata: Metadata = {
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    default: `Clínica e exames em Palhoça | Espaço Vida`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -77,14 +74,18 @@ export const defaultMetadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    // TODO: adicionar og-image quando disponível:
-    // images: [{ url: "/assets/espaco-vida/og-image.jpg", width: 1200, height: 630, alt: siteConfig.name }],
+    images: [{
+      url: "/assets/espaco-vida/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Espaço Vida Reabilitação em Palhoça",
+    }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    // TODO: adicionar twitter:image quando og-image estiver pronto
+    images: ["/assets/espaco-vida/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -102,6 +103,6 @@ export const defaultMetadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    // TODO: adicionar apple-touch-icon
+    apple: "/apple-touch-icon.png",
   },
 };

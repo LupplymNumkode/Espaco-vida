@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
@@ -134,20 +134,20 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-foreground">
+            <h3 className="text-2xl font-bold" style={{ color: "var(--plum)" }}>
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm" style={{ color: "var(--muted)" }}>
               {testimonials[active].designation}
             </p>
-            <div className="mt-8 space-y-4 text-base leading-[1.7] text-muted-foreground lg:hidden">
+            <div className="mt-8 space-y-4 text-base leading-[1.7] lg:hidden" style={{ color: "var(--muted)" }}>
               {activeQuote.map((paragraph, index) => (
                 <p key={index} className="m-0">
                   {paragraph}
                 </p>
               ))}
             </div>
-            <div className="mt-8 hidden lg:grid grid-cols-2 gap-10 text-base leading-[1.7] text-muted-foreground">
+            <div className="mt-8 hidden lg:grid grid-cols-2 gap-10 text-base leading-[1.7]" style={{ color: "var(--muted)" }}>
               <div className="space-y-4">
                 {activeQuote.slice(0, splitIndex).map((paragraph, index) => (
                   <p key={index} className="m-0">
@@ -169,17 +169,17 @@ export const AnimatedTestimonials = ({
               onClick={handlePrev}
               type="button"
               aria-label="Ver profissional anterior"
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
+              className="h-11 w-11 rounded-full bg-secondary flex items-center justify-center group/button"
             >
-              <IconArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
+              <ArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
               type="button"
               aria-label="Ver próxima profissional"
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
+              className="h-11 w-11 rounded-full bg-secondary flex items-center justify-center group/button"
             >
-              <IconArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
+              <ArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
         </div>

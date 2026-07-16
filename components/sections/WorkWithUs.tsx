@@ -133,7 +133,6 @@ export default function WorkWithUs() {
               borderColor: "rgba(75,0,113,0.1)",
               boxShadow: "var(--shadow-soft)",
             }}
-            noValidate
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="flex flex-col gap-1.5">

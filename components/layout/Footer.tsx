@@ -37,7 +37,7 @@ export default function Footer() {
                 }}
               >
                 <Image
-                  src="/assets/espaco-vida/espaco-vida-logo-transparent.png"
+                  src="/assets/espaco-vida/logo-192.png"
                   alt="Logo Espaço Vida"
                   width={40} height={40}
                   className="object-contain"

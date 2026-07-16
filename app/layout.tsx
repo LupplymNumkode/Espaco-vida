@@ -26,10 +26,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${playfair.variable} ${montserrat.variable}`}>
       <body>
+        <a className="skip-link" href="#conteudo-principal">
+          Ir para o conteúdo principal
+        </a>
         {children}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
         />
       </body>
     </html>

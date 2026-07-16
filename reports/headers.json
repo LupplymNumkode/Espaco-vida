@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "required": [
+    "Content-Security-Policy",
+    "Strict-Transport-Security",
+    "X-Content-Type-Options",
+    "Referrer-Policy",
+    "Permissions-Policy",
+    "X-Frame-Options"
+  ],
+  "missing": []
+}

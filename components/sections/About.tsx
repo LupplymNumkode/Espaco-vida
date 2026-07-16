@@ -31,7 +31,7 @@ export default function About() {
             style={{ boxShadow: "0 32px 80px rgba(75,11,107,0.14)" }}
           >
             <Image
-              src="/assets/espaco-vida/outrocard.jpg"
+              src="/assets/espaco-vida/about-optimized.webp"
               alt="Ambiente acolhedor de atendimento na Espaço Vida Reabilitação"
               width={600}
               height={520}

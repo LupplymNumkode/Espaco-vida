@@ -71,7 +71,7 @@ export default function Header() {
               }}
             >
               <Image
-                src="/assets/espaco-vida/espaco-vida-logo-transparent.png"
+                src="/assets/espaco-vida/logo-192.png"
                 alt="Logo Espaço Vida"
                 width={38}
                 height={38}

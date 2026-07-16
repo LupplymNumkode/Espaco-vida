@@ -48,9 +48,10 @@ export default function FinalCTA() {
             <WhatsappLink
               message={whatsappMessages.default}
               aria-label="Falar com a Espaço Vida pelo WhatsApp"
-              className="inline-flex items-center justify-center gap-2 h-[52px] px-7 rounded-full text-[0.9rem] font-[900] text-white transition-all duration-200 hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 h-[52px] px-7 rounded-full text-[0.9rem] font-[900] transition-all duration-200 hover:-translate-y-1"
               style={{
                 background: "var(--mint)",
+                color: "#0E2E2C",
                 boxShadow: "0 16px 44px rgba(35, 183, 174, 0.35)",
               }}
             >

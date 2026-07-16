@@ -1,0 +1,674 @@
+[
+  {
+    "file": "public/apple-touch-icon.png",
+    "bytes": 44929,
+    "width": 180,
+    "height": 180,
+    "format": "png",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/0-1.jpg",
+    "bytes": 216717,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-10.jpg",
+    "bytes": 190987,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-11.jpg",
+    "bytes": 208685,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-12.jpg",
+    "bytes": 268899,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-13.jpg",
+    "bytes": 268397,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-14.jpg",
+    "bytes": 286119,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-17.jpg",
+    "bytes": 260102,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-2.jpg",
+    "bytes": 173447,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-20.jpg",
+    "bytes": 322460,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-3.jpg",
+    "bytes": 221700,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-31.jpg",
+    "bytes": 264806,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-32.jpg",
+    "bytes": 218270,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/0-33.jpg",
+    "bytes": 211061,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/0-35.jpg",
+    "bytes": 214681,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/0-37.jpg",
+    "bytes": 211100,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-38.jpg",
+    "bytes": 224735,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-39.jpg",
+    "bytes": 255385,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-4.jpg",
+    "bytes": 196518,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-40.jpg",
+    "bytes": 244463,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-5.jpg",
+    "bytes": 241445,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-6.jpg",
+    "bytes": 195861,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-7.jpg",
+    "bytes": 312090,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-8.jpg",
+    "bytes": 217304,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/0-9.jpg",
+    "bytes": 172359,
+    "width": 1920,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/ImagemHero.jpg",
+    "bytes": 246471,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/about-optimized.webp",
+    "bytes": 59850,
+    "width": 900,
+    "height": 1100,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/espaco-vida-logo-transparent.png",
+    "bytes": 1178509,
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "oversized": true
+  },
+  {
+    "file": "public/assets/espaco-vida/hero-optimized.webp",
+    "bytes": 57986,
+    "width": 900,
+    "height": 1100,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/logo-192.png",
+    "bytes": 24039,
+    "width": 192,
+    "height": 192,
+    "format": "png",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/og-image.jpg",
+    "bytes": 73188,
+    "width": 1200,
+    "height": 630,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-1.webp",
+    "bytes": 45018,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-10.webp",
+    "bytes": 32728,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-11.webp",
+    "bytes": 38954,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-12.webp",
+    "bytes": 48994,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-13.webp",
+    "bytes": 46366,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-14.webp",
+    "bytes": 54706,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-17.webp",
+    "bytes": 58262,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-2.webp",
+    "bytes": 29894,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-20.webp",
+    "bytes": 67016,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-3.webp",
+    "bytes": 43542,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-31.webp",
+    "bytes": 49940,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-32.webp",
+    "bytes": 36332,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-33.webp",
+    "bytes": 39220,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-35.webp",
+    "bytes": 46354,
+    "width": 693,
+    "height": 1040,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-37.webp",
+    "bytes": 36300,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-38.webp",
+    "bytes": 46268,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-39.webp",
+    "bytes": 48768,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-4.webp",
+    "bytes": 40850,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-40.webp",
+    "bytes": 49298,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-5.webp",
+    "bytes": 43834,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-6.webp",
+    "bytes": 30628,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-7.webp",
+    "bytes": 63624,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-8.webp",
+    "bytes": 40710,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/optimized/0-9.webp",
+    "bytes": 29164,
+    "width": 1040,
+    "height": 693,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/outrocard.jpg",
+    "bytes": 222377,
+    "width": 1280,
+    "height": 1920,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-1.webp",
+    "bytes": 11532,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-10.webp",
+    "bytes": 7350,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-11.webp",
+    "bytes": 8470,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-12.webp",
+    "bytes": 10774,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-13.webp",
+    "bytes": 10190,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-14.webp",
+    "bytes": 10902,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-17.webp",
+    "bytes": 13556,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-2.webp",
+    "bytes": 7942,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-20.webp",
+    "bytes": 16526,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-3.webp",
+    "bytes": 11008,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-31.webp",
+    "bytes": 13760,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-32.webp",
+    "bytes": 9100,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-33.webp",
+    "bytes": 11278,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-35.webp",
+    "bytes": 12084,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-37.webp",
+    "bytes": 7844,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-38.webp",
+    "bytes": 12500,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-39.webp",
+    "bytes": 10618,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-4.webp",
+    "bytes": 10280,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-40.webp",
+    "bytes": 11570,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-5.webp",
+    "bytes": 9944,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-6.webp",
+    "bytes": 6926,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-7.webp",
+    "bytes": 12888,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-8.webp",
+    "bytes": 9200,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/assets/espaco-vida/thumbs/0-9.webp",
+    "bytes": 6390,
+    "width": 420,
+    "height": 320,
+    "format": "webp",
+    "oversized": false
+  },
+  {
+    "file": "public/images/team/ana-beatriz-silveira-zacchi-pereira.jpeg",
+    "bytes": 73439,
+    "width": 1066,
+    "height": 1600,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/images/team/ana-claudia-pfleger.jpeg",
+    "bytes": 151422,
+    "width": 720,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/images/team/leticia-oliveira.jpeg",
+    "bytes": 174797,
+    "width": 1022,
+    "height": 1600,
+    "format": "jpeg",
+    "oversized": false
+  },
+  {
+    "file": "public/images/team/poliana-souza.jpeg",
+    "bytes": 77768,
+    "width": 853,
+    "height": 1280,
+    "format": "jpeg",
+    "oversized": false
+  }
+]

@@ -6,10 +6,20 @@
     "dev": "next dev",
     "build": "next build && rm -rf .next/cache",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "serve:out": "node scripts/serve-static.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "audit:html": "html-validate \"out/index.html\"",
+    "audit:links": "node scripts/audit-links.mjs",
+    "audit:headers": "node scripts/audit-headers.mjs",
+    "audit:images": "node scripts/audit-images.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "audit:lighthouse": "lhci autorun",
+    "audit:report": "node scripts/generate-audit-report.mjs",
+    "audit": "node scripts/run-audit.mjs"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.44.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
@@ -20,6 +30,9 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^18.3.30",
@@ -27,6 +40,8 @@
     "autoprefixer": "^10.5.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "html-validate": "^11.5.6",
+    "jsonld": "^9.0.0",
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "typescript": "^5"
