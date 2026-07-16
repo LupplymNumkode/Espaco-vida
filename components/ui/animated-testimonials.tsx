@@ -66,8 +66,8 @@ export const AnimatedTestimonials = ({
       onPointerCancel={() => { dragStartX.current = null; }}
       aria-label="Carrossel de profissionais. Arraste para os lados ou use as setas."
     >
-      <div className="relative grid grid-cols-1 md:grid-cols-[minmax(360px,0.9fr)_minmax(0,1.35fr)] items-start gap-12 lg:gap-16">
-        <div className="w-full max-w-[520px] mx-auto md:mx-0">
+      <div className="relative grid grid-cols-1 md:grid-cols-[minmax(360px,0.9fr)_minmax(0,1.35fr)] items-start gap-12 lg:gap-24">
+        <div className="relative isolate z-0 w-full max-w-[520px] mx-auto md:mx-0">
           <div className="relative h-[420px] md:h-[540px] lg:h-[580px] w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
@@ -114,7 +114,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex min-h-[540px] lg:min-h-[580px] justify-between flex-col py-2">
+        <div className="relative z-10 flex min-h-[540px] lg:min-h-[580px] justify-between flex-col py-2">
           <motion.div
             key={active}
             initial={{
