@@ -130,7 +130,7 @@ export default function Location() {
                 style={{ border: 0, minHeight: 380 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             ) : (
               <div
