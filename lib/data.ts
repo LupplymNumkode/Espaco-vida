@@ -485,7 +485,7 @@ export const faqItems: FaqItem[] = [
 
 // ---------------------------------------------------------------------------
 // Location
-// mapsDirectionsUrl is a search-based URL used only by the directions button.
+// mapsDirectionsUrl opens the clinic's confirmed Google Maps location.
 // ---------------------------------------------------------------------------
 
 export const locationData = {
@@ -497,9 +497,7 @@ export const locationData = {
   postalCode: null as string | null,
   mapsEmbedSrc:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.2558789985937!2d-48.6669!3d-27.647554000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952735f4ce237015%3A0xa17f5b45dea3c2e4!2zRXNwYcOnbyBWaWRhIFJlYWJpbGl0YcOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1784165305739!5m2!1spt-BR!2sbr",
-  // Fallback URL para botão "Abrir no Maps"
-  mapsDirectionsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centro+Empresarial+Zacchi+%26+Costa+Rua+Jos%C3%A9+Maria+da+Luz+2891+Palho%C3%A7a+SC",
+  mapsDirectionsUrl: "https://maps.app.goo.gl/akhsTRsYmH8r7w468",
   // TODO: confirmar horários de atendimento com cliente
   hours: null as string | null,
 };
