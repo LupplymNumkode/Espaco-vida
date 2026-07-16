@@ -51,6 +51,7 @@ export function ImageGallery() {
   const [inPlace, setInPlace] = useState(0)
   const [gsapReady, setGsapReady] = useState(false)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [galleryOpen, setGalleryOpen] = useState(false)
   const dragStartX = useRef<number | null>(null)
   const dragged = useRef(false)
 
@@ -113,15 +114,18 @@ export function ImageGallery() {
 
   // Teclado no lightbox
   useEffect(() => {
-    if (!lightboxOpen) return
+    if (!lightboxOpen && !galleryOpen) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLightboxOpen(false)
-      if (e.key === "ArrowLeft") setOpened((p) => (p - 1 + images.length) % images.length)
-      if (e.key === "ArrowRight") setOpened((p) => (p + 1) % images.length)
+      if (e.key === "Escape") {
+        if (lightboxOpen) setLightboxOpen(false)
+        else setGalleryOpen(false)
+      }
+      if (lightboxOpen && e.key === "ArrowLeft") setOpened((p) => (p - 1 + images.length) % images.length)
+      if (lightboxOpen && e.key === "ArrowRight") setOpened((p) => (p + 1) % images.length)
     }
     window.addEventListener("keydown", handleKey)
     return () => window.removeEventListener("keydown", handleKey)
-  }, [lightboxOpen])
+  }, [lightboxOpen, galleryOpen])
 
   return (
     <>
@@ -213,6 +217,72 @@ export function ImageGallery() {
         </button>
       </div>
 
+      <div className="flex justify-center mt-8">
+        <button
+          type="button"
+          onClick={() => setGalleryOpen(true)}
+          className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-6 text-sm font-[900] text-white transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
+          style={{
+            background: "var(--purple)",
+            boxShadow: "0 14px 36px rgba(75, 11, 107, 0.24)",
+          }}
+        >
+          Ver galeria completa
+        </button>
+      </div>
+
+      {/* Galeria completa */}
+      {galleryOpen && (
+        <div className="fixed inset-0 z-[9000] overflow-y-auto bg-black/92 backdrop-blur-md">
+          <div className="mx-auto min-h-full w-full max-w-7xl px-4 pb-10 pt-20 sm:px-8">
+            <div className="mb-6 flex items-center justify-between gap-4 text-white">
+              <div>
+                <p className="m-0 text-sm font-semibold text-white/65">Galeria</p>
+                <h3 className="m-0 text-2xl font-bold text-white">Espaço Vida</h3>
+              </div>
+              <span className="text-sm text-white/65">{images.length} fotos</span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+              {images.map((image, index) => (
+                <button
+                  key={image.url}
+                  type="button"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-white/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/70"
+                  onClick={() => {
+                    setOpened(index)
+                    setLightboxOpen(true)
+                  }}
+                  aria-label={`Ampliar foto ${index + 1}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={image.url}
+                    alt={`${image.title} — foto ${index + 1}`}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2 right-2 rounded-full bg-black/55 px-2 py-1 text-xs font-semibold text-white">
+                    {index + 1}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="fixed right-4 top-4 z-[9001] flex h-12 w-12 items-center justify-center rounded-full bg-white text-gray-900 shadow-2xl ring-2 ring-black/10 transition-transform hover:scale-105 sm:right-6 sm:top-6"
+            onClick={() => setGalleryOpen(false)}
+            aria-label="Fechar galeria completa"
+          >
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* Lightbox */}
       {lightboxOpen && (
         <div
@@ -231,11 +301,12 @@ export function ImageGallery() {
         >
           {/* Fechar */}
           <button
-            className="absolute top-4 right-4 z-[10001] flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/25 transition-colors"
+            type="button"
+            className="absolute right-4 top-4 z-[10001] flex h-12 w-12 items-center justify-center rounded-full bg-white text-gray-900 shadow-2xl ring-2 ring-black/10 transition-transform hover:scale-105 sm:right-6 sm:top-6"
             onClick={() => setLightboxOpen(false)}
-            aria-label="Fechar"
+            aria-label="Fechar imagem ampliada"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
