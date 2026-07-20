@@ -4,7 +4,6 @@ import FloatingActions from "@/components/layout/FloatingActions";
 import Hero from "@/components/sections/Hero";
 import AudiologyExams from "@/components/sections/AudiologyExams";
 import Specialties from "@/components/sections/Specialties";
-import SpeechPhonemes from "@/components/sections/SpeechPhonemes";
 import About from "@/components/sections/About";
 import Gallery from "@/components/sections/Gallery";
 import Audience from "@/components/sections/Audience";
@@ -23,7 +22,6 @@ export default function Home() {
         <Hero />
         <AudiologyExams />
         <Specialties />
-        <SpeechPhonemes />
         <About />
         <Gallery />
         <Team />

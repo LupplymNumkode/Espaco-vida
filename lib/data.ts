@@ -249,32 +249,6 @@ export const audiologyWhy = {
 };
 
 // ---------------------------------------------------------------------------
-// Aquisição dos fonemas da fala — bloco educativo
-// ---------------------------------------------------------------------------
-
-export const phonemesBlock = {
-  title: "Aquisição dos fonemas da fala",
-  subtitle:
-    "Observar o desenvolvimento da fala é um cuidado importante para identificar quando a criança pode precisar de acompanhamento.",
-  text:
-    "Os sons da fala, chamados fonemas, são adquiridos em uma sequência esperada ao longo do desenvolvimento infantil. Cada fonema costuma surgir em uma determinada fase, e conhecer esse processo é fundamental para identificar quando há necessidade de acompanhamento.",
-  checklistTitle: "É importante observar se a criança:",
-  checklist: [
-    "Troca ou omite sons que já deveriam estar presentes na fala.",
-    "Apresenta dificuldade para produzir determinados fonemas.",
-    "Tem a fala pouco compreensível para a idade.",
-    "Encontra dificuldade para se comunicar com outras pessoas.",
-  ],
-  closing: [
-    "A identificação precoce de alterações na aquisição dos fonemas favorece uma intervenção mais eficaz, contribuindo para o desenvolvimento da comunicação, da aprendizagem e das habilidades sociais.",
-    "Na dúvida, procure um fonoaudiólogo. Uma avaliação especializada pode identificar se o desenvolvimento da fala está dentro do esperado e orientar a família sobre os próximos passos.",
-    "Acompanhar o desenvolvimento da fala é um cuidado que faz toda a diferença no futuro da criança.",
-  ],
-  whatsappMessage:
-    "Olá! Gostaria de agendar uma avaliação fonoaudiológica do desenvolvimento da fala na Espaço Vida.",
-};
-
-// ---------------------------------------------------------------------------
 // Trust Rail
 // NOTE: these indicators need confirmation from the client.
 // Do not publish placeholder numbers as real facts.
